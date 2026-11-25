@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Cadence",
+      "hasCanvas": false,
+      "bodyTextLen": 1967,
+      "bodyTextHash": "d9a7d8d3d4788ec7b12bbc5089c84b05d59379c52156da505129090af8371052",
+      "bodyTextPrefix": "CADENCE First song New Duplicate Delete VERSE · I C Major · 4/4 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Cadence",
+      "hasCanvas": false,
+      "bodyTextLen": 1905,
+      "bodyTextHash": "e72231d986a1460382e19407d004aad07175f4ae3efff8231bb5acec42f1b902",
+      "bodyTextPrefix": "CADENCE First song New Duplicate Delete VERSE · I C Major · 4/4 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

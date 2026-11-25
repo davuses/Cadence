@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --color-bg: #12110e;
+  --color-surface: #1c1a16;
+  --color-raised: #2a261f;
+  --color-line: #3c362c;
+  --color-fg: #f4ecdf;
+  --color-ivory: #efe6d6;
+  --color-muted: #b3a894;
+  --color-brass: #e4a23a;
+  --color-ink: #1a140c;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.15rem;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .icon-btn {
+    display: grid;
+    height: 2.75rem;
+    width: 2.75rem;
+    place-items: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-line);
+    background: var(--color-raised);
+    color: var(--color-fg);
+  }
+
+  .chip {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-line);
+    background: var(--color-raised);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.875rem;
+    color: var(--color-fg);
+  }
+
+  .chip-on {
+    border-color: var(--color-brass);
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  .choice {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-line);
+    background: var(--color-raised);
+    padding: 0.25rem 0.4rem;
+    font-size: 0.875rem;
+    color: var(--color-fg);
+  }
+
+  .choice-on {
+    border-color: var(--color-brass);
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line) transparent;
+  }
+
+  .field {
+    min-height: 2.75rem;
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-line);
+    background: var(--color-raised);
+    padding: 0.45rem 0.75rem;
+    color: var(--color-fg);
+    font: inherit;
+  }
+
+  .field::placeholder {
+    color: var(--color-muted);
+  }
+
+  .title-field {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--color-fg);
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    line-height: 1.1;
+  }
+
+  select.field {
+    width: auto;
+    max-width: 12rem;
+  }
+
+  .desk {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+      "now"
+      "prog"
+      "transport"
+      "edit"
+      "presets"
+      "key"
+      "pattern";
+  }
+
+  .desk > * {
+    min-width: 0;
+  }
+
+  .area-now { grid-area: now; }
+  .area-transport { grid-area: transport; }
+  .area-prog { grid-area: prog; }
+  .area-presets { grid-area: presets; }
+  .area-edit { grid-area: edit; }
+  .area-key { grid-area: key; }
+  .area-pattern { grid-area: pattern; }
+}
+
+@media (min-width: 1024px) {
+  .desk {
+    grid-template-columns: minmax(0, 1fr) 21rem;
+    grid-template-areas:
+      "now transport"
+      "prog prog"
+      "presets key"
+      "edit pattern";
+  }
+
+  .area-transport {
+    align-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
